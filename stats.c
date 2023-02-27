@@ -9,16 +9,20 @@
  *
  *****************************************************************************/
 /**
- * @file    <stats.c> 
- * @brief   < implement some statistics function on sampled set of random data>
- * @author  <Mohammed Zwayen>
- * @date    <27/02/2023 >
+ * @file <Add File Name> 
+ * @brief <Add Brief Description Here >
+ *
+ * <Add Extended Description Here>
+ *
+ * @author <Add FirsName LastName>
+ * @date <Add date >
  *
  */
 
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -34,26 +38,72 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+  print_statistics(test, SIZE);  
 }
 
 /* Add other Implementation File Code Here */
 void print_statistics(unsigned char* arr, int len){
+  printf("print_array : \n");
+  print_array(arr, len);  
+  printf("find_minimum: %d \n", find_minimum(arr, len));
+  printf("find_maximum: %d \n", find_maximum(arr, len));
+  printf("find_mean: %.2f \n", find_mean(arr, len));
+  printf("find_median: %d \n", find_median(arr, len));
 }
 
 void print_array(unsigned char* arr, int len){
+  for (int i = 0; i < len; ++i)
+    printf("arr[%d] = %d\n", i, arr[i]);
 }
 
 int find_median(unsigned char* arr, int len){
+  unsigned char* sortedArr = sort_array(arr, len);
+  int median = sortedArr[len/2];
+  if((len % 2 )== 0)//even len median is the avarge of the middle two items.  
+    median = (int) ( median + sortedArr[(len+1)/2] )/2;
+  free(sortedArr);
+  return median;
 }
 
 double find_mean(unsigned char* arr, int len){
+  unsigned int sum = 0;
+  for (size_t i = 0; i < len; i++)
+    sum += arr[i];
+  double mean = sum/len;
+  return mean;
 }
 
 int find_maximum(unsigned char* arr, int len){
+  unsigned char max = arr[0];
+  for (size_t i = 1; i < len; i++)
+    if (max < arr[i])
+      max = arr[i];
+  return max;
 }
 
 int find_minimum(unsigned char* arr, int len){
+  unsigned char min = arr[0];
+  for (size_t i = 1; i < len; i++)
+    if (min > arr[i])
+      min = arr[i];
+  return min;
 }
 
 unsigned char* sort_array(unsigned char* arr, int len){
+  int i, j;
+  unsigned char a;
+  unsigned char *sortedArr = malloc(len);
+
+  for (size_t i = 0; i < len; i++)
+    sortedArr[i] = arr[i];
+  
+  for (i = 0; i < len; ++i)
+    for (j = i + 1; j < len; ++j)
+      if (sortedArr[i] < sortedArr[j])
+      {
+        a = sortedArr[i];
+        sortedArr[i] = sortedArr[j];
+        sortedArr[j] = a;
+      }
+  return sortedArr;
 }

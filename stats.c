@@ -9,13 +9,10 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
- *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @file    <stats.c> 
+ * @brief   < implement some statistics function on sampled set of random data>
+ * @author  <Mohammed Zwayen>
+ * @date    <27/02/2023 >
  *
  */
 
@@ -37,7 +34,26 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(unsigned char* arr, int len){
+}
+
+void print_array(unsigned char* arr, int len){
+}
+
+int find_median(unsigned char* arr, int len){
+}
+
+double find_mean(unsigned char* arr, int len){
+}
+
+int find_maximum(unsigned char* arr, int len){
+}
+
+int find_minimum(unsigned char* arr, int len){
+}
+
+unsigned char* sort_array(unsigned char* arr, int len){
+}

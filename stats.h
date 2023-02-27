@@ -9,32 +9,78 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
- *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @file    <stats.h> 
+ * @brief   < header file for statistics functions>
+ * @author  <Mohammed Zwayen>
+ * @date    <27/02/2023 >
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/**
+ * @brief <print on screen statistics for samples array>
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
+ *
+ * @return <void: no retrun >
+ */
+void print_statistics(unsigned char* arr, int len);
+
+/**
+ * @brief <show array elements alogside with its indeces on screen>
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
+ *
+ * @return <void: no retrun >
+ */
+void print_array(unsigned char* arr, int len);
+
+/**
+ * @brief <find the median value in array of samples >
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
+ *
+ * @return <int : the median value for data set to nearst int >
+ */
+int find_median(unsigned char* arr, int len);
 
 /**
  * @brief <Add Brief Description of Function Here>
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
  *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @return <double : the mean value for data set >
  */
+double find_mean(unsigned char* arr, int len);
+
+/**
+ * @brief <Add Brief Description of Function Here>
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
+ *
+ * @return <int: the maximum value among the data set  >
+ */
+int find_maximum(unsigned char* arr, int len);
+
+/**
+ * @brief <Add Brief Description of Function Here>
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
+ *
+ * @return <int: the minimum value among the data set >
+ */
+int find_minimum(unsigned char* arr, int len);
+
+/**
+ * @brief <Sort array of samples in Descadig way>
+ * @param <arr> <samples to be studied>
+ * @param <len> <samples count/lengath>
+ * @attention <no side effect: new array will be returned back>
+ * 
+ * @return <unsigned char*: new array after sorting the old one's elements >
+ */
+unsigned char* sort_array(unsigned char* arr, int len);
 
 
 #endif /* __STATS_H__ */
